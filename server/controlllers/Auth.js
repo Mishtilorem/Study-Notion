@@ -313,7 +313,7 @@ try {
       { password: encryptedPassword },
       { new: true }
     )
-    console.log(updatedUserDetails,"rfnawulgnwU")
+    // console.log(updatedUserDetails,"rfnawulgnwU")
     // Send notification email
     try {
       const emailResponse = await mailSender(

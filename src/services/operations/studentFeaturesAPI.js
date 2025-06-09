@@ -12,7 +12,7 @@ function loadScript(src) {
     return new Promise((resolve) => {
         const script = document.createElement("script");
         script.src = src;
-        console.log('this is running fine')
+        // console.log('this is running fine')
         script.onload = () => {
             resolve(true);
         }
@@ -27,7 +27,7 @@ function loadScript(src) {
 
 
 export async function buyCourse(token, courses, userDetails, navigate, dispatch) {
-    console.log(courses,"courses")
+    // console.log(courses,"courses")
 //     console.log("Razorpay on window2:", window.Razorpay);
 // console.log("Razorpay Key:", process.env.REACT_APP_RAZORPAY_KEY);
 // console.log("Razorpay secret",process.env.REACT_APP_RAZORPAY_SECRET)
@@ -35,10 +35,10 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
     try{
         // load the script
         // before calling razorpay wala
-        console.log("hehe")
+        // console.log("hehe")
         const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
-        console.log("res",res)
-        console.log("COURSE_PAYMENT_API:", COURSE_PAYMENT_API);
+        // console.log("res",res)
+        // console.log("COURSE_PAYMENT_API:", COURSE_PAYMENT_API);
 
         if(!res) {
             toast.error("RazorPay SDK failed to load");
@@ -84,7 +84,7 @@ if (!window.Razorpay) {
         }
         //miss hogya tha 
         const paymentObject = new window.Razorpay(options);
-        console.log(options,"kdewod")
+        // console.log(options,"kdewod")
         paymentObject.open();
         paymentObject.on("payment.failed", function(response) {
             toast.error("oops, payment failed");
@@ -94,7 +94,7 @@ if (!window.Razorpay) {
 
     }
     catch(error) {
-        console.log("PAYMENT API ERROR.....", error);
+        // console.log("PAYMENT API ERROR.....", error);
         toast.error("Could not make Payment");
         return ;
         
@@ -136,7 +136,7 @@ async function verifyPayment(bodyData, token, navigate, dispatch) {
         dispatch(resetCart());
     }   
     catch(error) {
-        console.log("PAYMENT VERIFY ERROR....", error);
+        // console.log("PAYMENT VERIFY ERROR....", error);
         toast.error("Could not verify Payment");
     }
     toast.dismiss(toastId);

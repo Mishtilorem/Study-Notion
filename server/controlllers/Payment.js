@@ -226,7 +226,7 @@ exports.capturePayment = async (req, res) => {
     }
   
     let body = razorpay_order_id + "|" + razorpay_payment_id
-    console.log("signatire wale p")
+    // console.log("signatire wale p")
     const expectedSignature = crypto
       .createHmac("sha256", process.env.RAZORPAY_SECRET)
       .update(body.toString())
